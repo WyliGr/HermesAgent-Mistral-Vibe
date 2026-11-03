@@ -23,7 +23,27 @@ The Mistral plan carries **two separate monthly counters**: the small API one (1
 | [docs/03-step-by-step.md](docs/03-step-by-step.md) | Full walkthrough: provision the key, verify it, plug it into Hermes |
 | [docs/04-hermes-integration.md](docs/04-hermes-integration.md) | Hermes-specific wiring: `.env`, per-channel model routing, restart discipline |
 | [docs/05-troubleshooting.md](docs/05-troubleshooting.md) | Every pitfall we hit: 429s, expired links, zombie pollers, headless TUI |
+| [INSTRUCTIONS.md](INSTRUCTIONS.md) | The mission brief your agent reads after cloning (phases, rules, failure table) |
 | [scripts/vibe_signin.py](scripts/vibe_signin.py) | Dependency-free headless sign-in script (stdlib only) |
+
+## Install — paste this into your Hermes agent
+
+Copy-paste the block below as a message to your Hermes agent (fresh session, on the machine that runs the gateway). The agent clones this repo, reads `INSTRUCTIONS.md`, and drives the whole switch — it will only come back to you twice: once to approve the sign-in URL in your browser, once to restart the gateway from your own shell.
+
+```text
+You are my Hermes agent. Your mission: switch this Hermes instance to the
+Mistral "Vibe code usage" quota (the big counter) instead of the standard
+API quota (the small one that is burning).
+
+1. Clone https://github.com/WyliGr/HermesAgent-Mistral-Vibe.git to /root/
+   (or any scratch dir) and READ the whole INSTRUCTIONS.md at the root of
+   the repo — it is your complete mission brief: context, hard rules,
+   phases, failure table, done-criteria. Follow it exactly.
+2. Also read the docs/ files it references before touching anything.
+3. Execute the mission end to end. I am the human in that brief: you will
+   hand me the sign-in URL to approve in my browser, and the gateway
+   restart command to run in my own shell. Never print any key or token.
+```
 
 ## TL;DR (5 lines)
 
