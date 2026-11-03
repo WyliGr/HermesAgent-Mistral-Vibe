@@ -32,19 +32,26 @@ The Mistral plan carries **two separate monthly counters**: the small API one (1
 
 Copy-paste the block below as a message to your Hermes agent (fresh session, on the machine that runs the gateway). The agent clones this repo, reads `INSTRUCTIONS.md`, and drives the whole switch — it will only come back to you twice: once to approve the sign-in URL in your browser, once to restart the gateway from your own shell.
 
-```text
-You are my Hermes agent. Your mission: switch this Hermes instance to the
-Mistral "Vibe code usage" quota (the big counter) instead of the standard
-API quota (the small one that is burning).
+```markdown
+**Primary Objective**
+Migrate this Hermes instance's current API configuration from the standard Mistral API quota to the "Vibe code usage" quota.
 
-1. Clone https://github.com/WyliGr/HermesAgent-Mistral-Vibe.git to /root/
-   (or any scratch dir) and READ the whole INSTRUCTIONS.md at the root of
-   the repo — it is your complete mission brief: context, hard rules,
-   phases, failure table, done-criteria. Follow it exactly.
-2. Also read the docs/ files it references before touching anything.
-3. Execute the mission end to end. I am the human in that brief: you will
-   hand me the sign-in URL to approve in my browser, and the gateway
-   restart command to run in my own shell. Never print any key or token.
+**Execution Protocol**
+
+1. **Initialize Workspace:** Clone `[https://github.com/WyliGr/HermesAgent-Mistral-Vibe.git](https://github.com/WyliGr/HermesAgent-Mistral-Vibe.git)` into a dedicated scratch directory (e.g., `/tmp/hermes-vibe-migration` or `/root/`).
+2. **Ingest Mission Brief:** Read `INSTRUCTIONS.md` at the root of the repository. This is your definitive operational framework. You must strictly adhere to its context, hard rules, phase breakdowns, failure matrices, and definition of done.
+3. **Review Dependencies:** Read all supplementary files located in the `docs/` directory referenced by the primary brief before making any system changes.
+4. **Execute Migration Phase:** Process the migration end-to-end exactly as specified in the documentation.
+
+**Human-in-the-Loop (HITL) Handoffs**
+You are operating alongside a human administrator. You must pause execution and hand off the following specific tasks:
+
+* **Authentication:** Output the required sign-in URL for the human to approve in their local browser. Await confirmation before proceeding.
+* **Service Restart:** Provide the exact gateway restart command for the human to execute in their host shell.
+
+**Security Constraints**
+
+* **CRITICAL:** Under absolutely no circumstances may you print, echo, or log any API keys, auth tokens, or sensitive credentials to the output buffer.
 ```
 
 ## TL;DR (5 lines)
